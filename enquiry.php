@@ -1,3 +1,11 @@
+<?php
+use Phppot\Member;
+if (! empty($_POST["submit-btn"])) {
+    require_once './Model/Member.php';
+    $member = new Member();
+    $registrationResponse = $member->enquiryRegister();
+}
+?>
 <HTML>
 <HEAD>
 	<TITLE></TITLE>
@@ -23,11 +31,12 @@
 </HEAD>
 <BODY>
 	<div class="container">
+	<a href="index.php">Back</a>
 	<section class="contact section">
 	<div class="row">	
     	<h1><b>Inquiry Form</b></h1>
 			<div class="col-lg-12">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+            <form name="enquiry" method="post" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-md-6">
 					<b>Full Name : </b>
@@ -54,7 +63,7 @@
                   <input type="date" name="date" class="form-control" id="date-info" placeholder="Date" required="">
                 </div><br><br>
                 <div class="col-md-12 text-center">
-                  <button type="submit" id="submit-btn" value="Submit">Submit</button>
+                  <button type="submit" id="submit-btn" value="Submit" name="submit-btn">Submit</button>
                 </div>
               </div>
             </form>
