@@ -1,9 +1,10 @@
 <?php 
-
-include 'lib/DataSource.php';
-$query= "SELECT * FROM `tbl_enquiry`";
-$result = mysqli_query($conn,$query);
-
+use Phppot\Member;
+if (! empty($_POST["signup-btn"])) {
+    require_once './Model/Member.php';
+    $member = new Member();
+    $registrationResponse = $member->listMember();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,11 +28,11 @@ $result = mysqli_query($conn,$query);
                 </tr>
 
             <?php
-            if(!$result)
+            if(!$registrationResponse)
             {
                 die("Invalid query".$conn->error);
             }
-            while($row = $result->fetch_assoc())
+            while($row = $registrationResponse->fetch_assoc())
             {
              echo "<tr>
                     <td>". $row["id"] . "</td>

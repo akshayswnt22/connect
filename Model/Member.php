@@ -153,4 +153,10 @@ class Member
             return $loginStatus;
         }
     }
+
+    public function listMember() {
+
+        $query= 'SELECT * FROM tbl_enquiry where date >= CURRENT_TIMESTAMP -30';
+        $result = mysqli_query($conn,$query);
+    }
 }
