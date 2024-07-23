@@ -1,0 +1,15 @@
+table
+{
+	width: 90%;
+	margin: 2% 0 0 5%;
+	border: solid 1px black;
+}
+th{
+	padding: 15px;
+	background-color: skyblue;
+}
+tr td
+{
+	padding: 15px;
+	border: solid 1px black;
+}
