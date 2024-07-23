@@ -153,4 +153,47 @@ class Member
             return $loginStatus;
         }
     }
+
+    public function listMember() {
+
+        $query= 'SELECT * FROM tbl_enquiry where date >= CURRENT_TIMESTAMP -30';
+        $result = mysqli_query($conn,$query);
+    }
+
+        /**
+     * to signup / register a user
+     *
+     * @return string[] registration status message
+     */
+    public function enquiryRegister()
+    {
+        $isEmailExists = $this->isEmailExists($_POST["email"]);
+        if ($isEmailExists) {
+            $response = array(
+                "status" => "error",
+                "message" => "Enquiry email already exists."
+            );
+        }  else {
+            $query = 'INSERT INTO tbl_enquiry (name,mobile_no,email,college_name,branch,reg_date) VALUES (?, ?, ?, ?, ?, ?)';
+            $paramType = 'sisssd';
+            $paramValue = array(
+                $_POST["fullname"],
+                $_POST["mobile"],
+                $_POST["email"],
+                $_POST["clgname"],
+                $_POST["branchname"],
+                $_POST["date"]
+            );
+            $memberId = $this->ds->insert($query, $paramType, $paramValue);
+            if (! empty($memberId)) {
+                $response = array(
+                    "status" => "success",
+                    "message" => "You have inserted successfully."
+                );
+            }
+        }
+        return $response;
+    }
+
+
 }

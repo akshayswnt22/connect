@@ -69,7 +69,7 @@ if (isset($_SESSION["username"])) {
         <ul>
           <li><a href="home.php" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#">Enquiry</a></li>
+          <li><a href="enquiry.php">Enquiry</a></li>
           <li><a href="index.php">signout</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
