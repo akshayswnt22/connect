@@ -1,115 +1,69 @@
-<!--<?php
-use Phppot\Member;
-if (! empty($_POST["signup-btn"])) {
-    require_once './Model/Member.php';
-    $member = new Member();
-    $registrationResponse = $member->registerMember();
-}
-?>
--->
 <HTML>
 <HEAD>
-	
-<TITLE></TITLE>
+	<TITLE></TITLE>
+	<!-- Favicons -->
+	<link href="assets/img/favicon.png" rel="icon">
+	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-<!--<link href="assets/css/phppot-style.css" type="text/css"
-	rel="stylesheet" />
-<link href="assets/css/user-registration.css" type="text/css"
-	rel="stylesheet" />
--->
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com" rel="preconnect">
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-<link  rel="stylesheet" href="style.css">
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-<script src="vendor/jquery/jquery-3.3.1.js" type="text/javascript"></script>
+	<!-- Main CSS File -->
+	<link href="assets/css/main.css" rel="stylesheet">
+	<script src="vendor/jquery/jquery-3.3.1.js" type="text/javascript"></script>
 </HEAD>
 <BODY>
-	<div class="phppot-container">
-		<div class="form-container">
-			
-			<div class="">
-				<form name="form" action="" method="post"
-					onsubmit="return formValidation()">
-					<div class="form-heading">Inquairi Form</div>
-		<!--	<?php
-    if (! empty($registrationResponse["status"])) {
-        ?>
-                    <?php
-        if ($registrationResponse["status"] == "error") {
-            ?>
-				    <div class="server-response error-msg"><?php echo $registrationResponse["message"]; ?></div>
-                    <?php
-        } else if ($registrationResponse["status"] == "success") {
-            ?>
-                    <div class="server-response success-msg"><?php echo $registrationResponse["message"]; ?></div>
-                    <?php
-        }
-        ?>
-				<?php
-    }
-    ?>
-            -->
-
-
-            <h1><b>Inquiry Form</b></h1>
-				
-			<div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+	<div class="container">
+	<section class="contact section">
+	<div class="row">	
+    	<h1><b>Inquiry Form</b></h1>
+			<div class="col-lg-12">
+            <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
-
                 <div class="col-md-6">
 					<b>Full Name : </b>
-                  <input type="text" name="fullname" class="form-control" id="fullname-info" placeholder="Enter full name" required="">
+                  <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter full name" required="">
                 </div><br>
-
 				<div class="col-md-6">
 				<b>Mobile No. : </b>
                   <input type="text" name="mobile" class="form-control" id="mobile-info" placeholder="Enter mobile no" required="">
                 </div><br>
-
                 <div class="col-md-6 ">
 				<b>Email : </b>
                   <input type="email" class="form-control" name="email" id="email-info" placeholder="Enter email" required="">
                 </div><br>
-
                 <div class="col-md-12">
 				<b>College Name : </b>
                   <input type="text" class="form-control" name="clgname" id="clgname-info" placeholder="Enter college name" required="">
                 </div><br>
-
                 <div class="col-md-12">
 				<b>Branch Name : </b>
                   <input type="text" class="form-control" name="branchname" id="branchname-info" placeholder="Enter branch name" required=""></textarea>
                 </div><br>
-                  
 				<div class="col-md-6">
 				<b>Date : </b>
-                  <input type="text" name="date" class="form-control" id="date-info
-				  mnbmm" placeholder="Date" required="">
+                  <input type="date" name="date" class="form-control" id="date-info" placeholder="Date" required="">
                 </div><br><br>
-
                 <div class="col-md-12 text-center">
                   <button type="submit" id="submit-btn" value="Submit">Submit</button>
                 </div>
-
               </div>
             </form>
-          </div><!-- End enquiry Form -->
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
-
-
-
-	<script>
+    </div><!-- End enquiry Form -->
+</section>
+</div>
+</BODY>
+</HTML>
+<script>
 function formValidation() {
 	var valid = true;
 
@@ -212,5 +166,4 @@ function formValidation() {
 
 }
 </script>
-</BODY>
-</HTML>
+
